@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; }
+
+body, html {
+  background-color: white;
+  z-index: -2; }
+
+.nav-container {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  color: #03113d;
+  width: 100%;
+  height: 75px;
+  border-bottom: 1px solid #03113D;
+  z-index: 99; }
+  .nav-container h1 {
+    text-align: center;
+    line-height: 75px; }
+  .nav-container .nav-btn {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%); }
+    .nav-container .nav-btn .hamburger-container {
+      width: 25px;
+      height: 2px;
+      background-color: #03113d;
+      border-radius: 5px;
+      position: relative;
+      text-align: left;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      .nav-container .nav-btn .hamburger-container:before, .nav-container .nav-btn .hamburger-container:after {
+        content: '';
+        width: 100%;
+        height: 2px;
+        background-color: #03113d;
+        position: absolute;
+        border-radius: 5px; }
+      .nav-container .nav-btn .hamburger-container:before {
+        top: -8px; }
+      .nav-container .nav-btn .hamburger-container:after {
+        top: 8px; }
+  .nav-container .nav-content-container {
+    position: absolute;
+    top: 0;
+    left: -270px;
+    width: 270px;
+    height: 100vh;
+    border-right: 1px solid #03113d;
+    background-color: white;
+    transition: all 0.5s; }
+    .nav-container .nav-content-container.open {
+      left: 0; }
+    .nav-container .nav-content-container .nav-items-container {
+      position: absolute;
+      width: 100%;
+      top: 100px; }
+      .nav-container .nav-content-container .nav-items-container ul {
+        list-style-type: none;
+        border-top: 1px solid #03113d; }
+        .nav-container .nav-content-container .nav-items-container ul li a {
+          display: block;
+          padding: 15px 10px;
+          text-decoration: none;
+          color: #03113d;
+          border-bottom: 1px solid #03113d; }
+          .nav-container .nav-content-container .nav-items-container ul li a.active {
+            background-color: #03113d;
+            color: white; }
+    .nav-container .nav-content-container .social-nav-items-container {
+      position: absolute;
+      width: 100%;
+      bottom: 50px; }
+      .nav-container .nav-content-container .social-nav-items-container ul {
+        list-style-type: none; }
+        .nav-container .nav-content-container .social-nav-items-container ul li {
+          display: inline-block;
+          width: 23%; }
+          .nav-container .nav-content-container .social-nav-items-container ul li a {
+            display: block;
+            padding: 20px 10px;
+            text-align: center;
+            color: #03113d;
+            text-decoration: none; }
+            .nav-container .nav-content-container .social-nav-items-container ul li a img {
+              width: 100%; }
+
+#home .page-content {
+  margin-top: 75px; }
+
+#about .page-content {
+  padding: 0 10px; }
+
+.content-container .page-content {
+  text-align: center; }
+  .content-container .page-content .section-split {
+    width: 90%;
+    border-color: #03113d;
+    margin: 0 auto 20px; }
+  .content-container .page-content h2 {
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: underline; }
+  .content-container .page-content p {
+    margin-top: 16px;
+    text-align: justify; }
+  .content-container .page-content section {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 16px;
+    color: #03113d; }
+    .content-container .page-content section .profile-image-container {
+      margin: 0px auto;
+      width: 250px;
+      z-index: -1; }
+      .content-container .page-content section .profile-image-container #profile-img {
+        border-radius: 50%;
+        width: 100%;
+        height: 250px;
+        margin-top: 16px; }
+    .content-container .page-content section .btn-container .read-more {
+      display: block;
+      text-decoration: none;
+      color: white;
+      background-color: #03113d;
+      width: 200px;
+      padding: 10px 5px;
+      margin: 16px auto 0; }
+    .content-container .page-content section .image-container {
+      margin-top: 91px; }
+      .content-container .page-content section .image-container img {
+        width: 100%; }
+
+.profile-image-container {
+  margin: 91px auto 0px;
+  width: 250px;
+  z-index: -1; }
+  .profile-image-container #profile-img {
+    border-radius: 50%;
+    width: 100%;
+    height: 250px; }
+
+.card-deck .card {
+  border: none; }
+  .card-deck .card .card-img-top {
+    width: 100%; }
+.card-deck .post-split {
+  width: 40%;
+  border-color: #03113d;
+  margin: 0 auto 20px; }
