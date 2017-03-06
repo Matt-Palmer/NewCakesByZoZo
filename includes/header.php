@@ -3,7 +3,7 @@
 
     <head>
 
-        <title>MP</title>
+        <title>Cakes By ZoZo</title>
 
         <meta charset="UTF-8">
         <meta name="description" content="Work created by Matt Palmer">
