@@ -1,19 +1,41 @@
+ /*
+(1) VARIABLES END
+(2) BODY AND HTML START
+(3) NAVIGATION END
+(4) PAGE CONTENT START
+(5) POST STYLING
+(6) ABOUT ME STYLING
+*/
+
+
+/*(1) VARIABLES START*/
+
 $main-bg: white;
 $main_nav_color: white;
 $active-link: #03113D;
 $text: #03113D;
 
+/*(1) VARIABLES END*/
+
+
+/*(2) BODY AND HTML START*/
 
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    color: $active-link;
 }
 
 body, html{
     background-color: $main-bg;
     z-index: -2;
 }
+
+/*(2) BODY AND HTML START*/
+
+
+/*(3) NAVIGATION START*/
 
 .nav-container{
     position: fixed;
@@ -25,22 +47,33 @@ body, html{
     border-bottom: 1px solid #03113D;
     z-index: 99;
     
-    h1{
-        text-align: center;
-        line-height: 75px;
+    #my-logo{
+        h1{
+            text-align: center;
+            line-height: 50px;
+            font-size: 1.7rem;
+            width: 200px;
+            height: 50px;
+            margin: 12px auto 0;
+
+            a{
+                text-decoration: none;
+                color: $active-link;
+            }
+        }
     }
 
     .nav-btn{
         position: absolute;
-        width: 35px;
-        height: 35px;
-        right: 0;
+        width: 20px;
+        height: 20px;
+        right: 3px;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-40%, -40%);
 
         .hamburger-container{
 
-            width: 25px;
+            width: 20px;
             height: 2px;
             background-color: 	$text;
             border-radius:5px;
@@ -61,11 +94,11 @@ body, html{
             }
 
             &:before{
-                top: -8px;
+                top: -6px;
             }
 
             &:after{
-                top: 8px;
+                top: 6px;
             }
         }
         
@@ -99,7 +132,9 @@ body, html{
                         padding: 15px 10px;
                         text-decoration: none;
                         color: 	$text;
-                        border-bottom: 1px solid 	$text;
+                        border-bottom: 1px solid $text;
+                        font-weight: bold;
+                        text-transform: uppercase;
 
                         &.active{
                             background-color: $active-link;
@@ -114,7 +149,7 @@ body, html{
             position: absolute;
             width: 100%;
             bottom: 50px;
-
+            padding-left: 8px;
             ul{
                 list-style-type: none;
                 li{
@@ -137,9 +172,19 @@ body, html{
     }
 }
 
-#home{
+/*(3) NAVIGATION END*/
+
+
+/*(4) PAGE CONTENT START*/
+
+#home,
+#post{
     .page-content{
-        margin-top: 75px;
+        margin-top: 91px;
+
+        h2{
+            margin-bottom: 20px;
+        }
     }
 }
 
@@ -157,7 +202,7 @@ body, html{
         .section-split{
             width: 90%;
             border-color: $active-link;
-            margin: 0 auto 20px;
+            margin: 20px auto;
         }
 
         h2{
@@ -174,11 +219,7 @@ body, html{
         section{
             padding-left: 10px;
             padding-right: 10px;
-            padding-bottom: 16px;
-
-            
-           color: $active-link;
-            
+            color: $active-link;
 
             .profile-image-container{
                 margin: 0px auto;
@@ -194,19 +235,27 @@ body, html{
             }
 
             .btn-container{
-                .read-more{
+                .button{
                     display: block;
                     text-decoration: none;
-                    color: white;
-                    background-color: $active-link;
                     width: 200px;
                     padding: 10px 5px;
                     margin: 16px auto 0;
                 }
+
+                .main-btn{
+                    color: white;
+                    background-color: $active-link;
+                }
+
+                .secondary-btn{
+                    color: $active-link;
+                    background-color: white;
+                    border: 1px solid $active-link;
+                }
             }
 
             .image-container{
-                margin-top: 91px;
 
                 img{
                     width: 100%
@@ -215,6 +264,77 @@ body, html{
         }
     }  
 }
+
+/*(4) PAGE CONTENT END*/
+
+
+/*(5) POST STYLING START*/
+.card-deck{
+    
+    .no-rl-padding{
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .card{
+        border: none;
+        .card-img-top{
+            width: 100%;
+            border-radius: 0;
+        }
+
+        .card-block{
+            padding-bottom: 0;
+        }
+
+        .date-and-time{
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .album-title{
+            position: absolute;
+            width: 200px;
+            height: 40px;
+            bottom: 00px;
+            left: 0;
+            right: 0;
+            background-color: white;
+            color: $active-link;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid $active-link;
+        }
+    }
+
+    .post-split{
+        width: 30%;
+        border-color: lightgray;
+        margin: 20px auto;
+    }
+}
+
+#posts{
+    h2{
+        margin-bottom: 20px;
+    }
+}
+
+.post-container{
+    .post-content{
+        text-align: justify;
+    }
+
+    .date-and-time{
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+}
+
+/*(5) POST STYLING END*/
+
+
+/*(6) ABOUT ME STYLING START*/
 
 .profile-image-container{
     margin: 91px auto 0px;
@@ -228,17 +348,4 @@ body, html{
     }
 }
 
-.card-deck{
-    .card{
-        border: none;
-        .card-img-top{
-            width: 100%;
-        }
-    }
-
-    .post-split{
-        width: 40%;
-        border-color: $active-link;
-        margin: 0 auto 20px;
-    }
-}
+/*(6) ABOUT ME STYLING END*/

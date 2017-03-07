@@ -1,12 +1,26 @@
+ /*
+(1) VARIABLES END
+(2) BODY AND HTML START
+(3) NAVIGATION END
+(4) PAGE CONTENT START
+(5) POST STYLING
+(6) ABOUT ME STYLING
+*/
+/*(1) VARIABLES START*/
+/*(1) VARIABLES END*/
+/*(2) BODY AND HTML START*/
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #03113d; }
 
 body, html {
   background-color: white;
   z-index: -2; }
 
+/*(2) BODY AND HTML START*/
+/*(3) NAVIGATION START*/
 .nav-container {
   position: fixed;
   top: 0;
@@ -16,18 +30,25 @@ body, html {
   height: 75px;
   border-bottom: 1px solid #03113D;
   z-index: 99; }
-  .nav-container h1 {
+  .nav-container #my-logo h1 {
     text-align: center;
-    line-height: 75px; }
+    line-height: 50px;
+    font-size: 1.7rem;
+    width: 200px;
+    height: 50px;
+    margin: 12px auto 0; }
+    .nav-container #my-logo h1 a {
+      text-decoration: none;
+      color: #03113d; }
   .nav-container .nav-btn {
     position: absolute;
-    width: 35px;
-    height: 35px;
-    right: 0;
+    width: 20px;
+    height: 20px;
+    right: 3px;
     top: 50%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-40%, -40%); }
     .nav-container .nav-btn .hamburger-container {
-      width: 25px;
+      width: 20px;
       height: 2px;
       background-color: #03113d;
       border-radius: 5px;
@@ -44,9 +65,9 @@ body, html {
         position: absolute;
         border-radius: 5px; }
       .nav-container .nav-btn .hamburger-container:before {
-        top: -8px; }
+        top: -6px; }
       .nav-container .nav-btn .hamburger-container:after {
-        top: 8px; }
+        top: 6px; }
   .nav-container .nav-content-container {
     position: absolute;
     top: 0;
@@ -70,14 +91,17 @@ body, html {
           padding: 15px 10px;
           text-decoration: none;
           color: #03113d;
-          border-bottom: 1px solid #03113d; }
+          border-bottom: 1px solid #03113d;
+          font-weight: bold;
+          text-transform: uppercase; }
           .nav-container .nav-content-container .nav-items-container ul li a.active {
             background-color: #03113d;
             color: white; }
     .nav-container .nav-content-container .social-nav-items-container {
       position: absolute;
       width: 100%;
-      bottom: 50px; }
+      bottom: 50px;
+      padding-left: 8px; }
       .nav-container .nav-content-container .social-nav-items-container ul {
         list-style-type: none; }
         .nav-container .nav-content-container .social-nav-items-container ul li {
@@ -92,8 +116,14 @@ body, html {
             .nav-container .nav-content-container .social-nav-items-container ul li a img {
               width: 100%; }
 
-#home .page-content {
-  margin-top: 75px; }
+/*(3) NAVIGATION END*/
+/*(4) PAGE CONTENT START*/
+#home .page-content,
+#post .page-content {
+  margin-top: 91px; }
+  #home .page-content h2,
+  #post .page-content h2 {
+    margin-bottom: 20px; }
 
 #about .page-content {
   padding: 0 10px; }
@@ -103,7 +133,7 @@ body, html {
   .content-container .page-content .section-split {
     width: 90%;
     border-color: #03113d;
-    margin: 0 auto 20px; }
+    margin: 20px auto; }
   .content-container .page-content h2 {
     text-transform: uppercase;
     display: inline-block;
@@ -114,7 +144,6 @@ body, html {
   .content-container .page-content section {
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 16px;
     color: #03113d; }
     .content-container .page-content section .profile-image-container {
       margin: 0px auto;
@@ -125,19 +154,65 @@ body, html {
         width: 100%;
         height: 250px;
         margin-top: 16px; }
-    .content-container .page-content section .btn-container .read-more {
+    .content-container .page-content section .btn-container .button {
       display: block;
       text-decoration: none;
-      color: white;
-      background-color: #03113d;
       width: 200px;
       padding: 10px 5px;
       margin: 16px auto 0; }
-    .content-container .page-content section .image-container {
-      margin-top: 91px; }
-      .content-container .page-content section .image-container img {
-        width: 100%; }
+    .content-container .page-content section .btn-container .main-btn {
+      color: white;
+      background-color: #03113d; }
+    .content-container .page-content section .btn-container .secondary-btn {
+      color: #03113d;
+      background-color: white;
+      border: 1px solid #03113d; }
+    .content-container .page-content section .image-container img {
+      width: 100%; }
 
+/*(4) PAGE CONTENT END*/
+/*(5) POST STYLING START*/
+.card-deck .no-rl-padding {
+  padding-right: 0;
+  padding-left: 0; }
+.card-deck .card {
+  border: none; }
+  .card-deck .card .card-img-top {
+    width: 100%;
+    border-radius: 0; }
+  .card-deck .card .card-block {
+    padding-bottom: 0; }
+  .card-deck .card .date-and-time {
+    font-size: 14px;
+    margin-bottom: 5px; }
+  .card-deck .card .album-title {
+    position: absolute;
+    width: 200px;
+    height: 40px;
+    bottom: 00px;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: #03113d;
+    text-align: center;
+    line-height: 40px;
+    border: 1px solid #03113d; }
+.card-deck .post-split {
+  width: 30%;
+  border-color: lightgray;
+  margin: 20px auto; }
+
+#posts h2 {
+  margin-bottom: 20px; }
+
+.post-container .post-content {
+  text-align: justify; }
+.post-container .date-and-time {
+  font-size: 14px;
+  margin-bottom: 5px; }
+
+/*(5) POST STYLING END*/
+/*(6) ABOUT ME STYLING START*/
 .profile-image-container {
   margin: 91px auto 0px;
   width: 250px;
@@ -147,11 +222,4 @@ body, html {
     width: 100%;
     height: 250px; }
 
-.card-deck .card {
-  border: none; }
-  .card-deck .card .card-img-top {
-    width: 100%; }
-.card-deck .post-split {
-  width: 40%;
-  border-color: #03113d;
-  margin: 0 auto 20px; }
+/*(6) ABOUT ME STYLING END*/

@@ -22,7 +22,7 @@
             </p>
 
             <div class="btn-container">
-                <a href="about.php" class="read-more">Read More</a>
+                <a href="about.php" class="button main-btn">Read More</a>
             </div>
         </section>
     </div>

@@ -13,8 +13,8 @@
 <nav class="nav-container">
     <div class="content-container">
 
-        <div class="my-logo">
-            <h1>Cakes By ZoZo</h1>
+        <div id="my-logo">
+            <h1><a href="index.php">Cakes By ZoZo</a></h1>
         </div>
 
         <div id="open-nav" class="nav-btn">
@@ -27,8 +27,8 @@
             <div class="nav-items-container">
                 <ul>
                     <li><a href="index.php" <?php classActive("index");?>>Home</a></li>
+                    <li><a href="posts.php" <?php classActive("posts");?>>Posts</a></li>
                     <li><a href="portfolio.php" <?php classActive("portfolio");?>>Portfolio</a></li>
-                    <li><a href="something.php" <?php classActive("something");?>>Something</a></li>
                     <li><a href="about.php" <?php classActive("about");?>>About Me</a></li>
                 </ul>
             </div>
@@ -37,7 +37,7 @@
                 <ul>
                     <li><a href="#"><img src="images/facebook-logo-button.svg"></a></li>
                     <li><a href="#"><img src="images/twitter-logo-button.svg"></a></li>
-                    <li><a href="#"><img src="images/linkedin-button.svg"></a></li>
+                    <li><a href="#"><img src="images/pinterest.svg"></a></li>
                     <li><a href="#"><img src="images/instagram-logo.svg"></a></li>
                 </ul>
             </div>
