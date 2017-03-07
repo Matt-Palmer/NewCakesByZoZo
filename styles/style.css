@@ -1,10 +1,11 @@
  /*
-(1) VARIABLES END
-(2) BODY AND HTML START
-(3) NAVIGATION END
-(4) PAGE CONTENT START
-(5) POST STYLING
-(6) ABOUT ME STYLING
+(1) VARIABLES
+(2) BODY AND HTML
+(3) NAVIGATION
+(4) PAGE CONTENT
+(5) BUTTONS
+(6) POST AND GALLERY CARDS
+(7) POST.PHP PAGE
 */
 /*(1) VARIABLES START*/
 /*(1) VARIABLES END*/
@@ -12,8 +13,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: border-box;
-  color: #03113d; }
+  box-sizing: border-box; }
 
 body, html {
   background-color: white;
@@ -119,59 +119,156 @@ body, html {
 /*(3) NAVIGATION END*/
 /*(4) PAGE CONTENT START*/
 #home .page-content,
-#post .page-content {
-  margin-top: 91px; }
-  #home .page-content h2,
-  #post .page-content h2 {
+#posts-page .page-content,
+#gallery-page .page-content,
+#about-page .page-content {
+  margin-top: 95px; }
+  #home .page-content h3,
+  #posts-page .page-content h3,
+  #gallery-page .page-content h3,
+  #about-page .page-content h3 {
     margin-bottom: 20px; }
+  #home .page-content #posts,
+  #home .page-content #albums,
+  #home .page-content #about-me,
+  #posts-page .page-content #posts,
+  #posts-page .page-content #albums,
+  #posts-page .page-content #about-me,
+  #gallery-page .page-content #posts,
+  #gallery-page .page-content #albums,
+  #gallery-page .page-content #about-me,
+  #about-page .page-content #posts,
+  #about-page .page-content #albums,
+  #about-page .page-content #about-me {
+    padding: 0 10px; }
+    #home .page-content #posts p,
+    #home .page-content #albums p,
+    #home .page-content #about-me p,
+    #posts-page .page-content #posts p,
+    #posts-page .page-content #albums p,
+    #posts-page .page-content #about-me p,
+    #gallery-page .page-content #posts p,
+    #gallery-page .page-content #albums p,
+    #gallery-page .page-content #about-me p,
+    #about-page .page-content #posts p,
+    #about-page .page-content #albums p,
+    #about-page .page-content #about-me p {
+      text-align: justify; }
 
-#about .page-content {
-  padding: 0 10px; }
-
-.content-container .page-content {
+#home h3,
+#posts-page h3,
+#gallery-page h3,
+#about-page h3 {
+  text-transform: uppercase;
+  display: inline-block;
+  text-decoration: underline;
+  font-weight: bold; }
+#home p,
+#posts-page p,
+#gallery-page p,
+#about-page p {
+  text-align: justify; }
+#home .page-content,
+#posts-page .page-content,
+#gallery-page .page-content,
+#about-page .page-content {
   text-align: center; }
-  .content-container .page-content .section-split {
+  #home .page-content .section-split,
+  #posts-page .page-content .section-split,
+  #gallery-page .page-content .section-split,
+  #about-page .page-content .section-split {
     width: 90%;
     border-color: #03113d;
     margin: 20px auto; }
-  .content-container .page-content h2 {
-    text-transform: uppercase;
-    display: inline-block;
-    text-decoration: underline; }
-  .content-container .page-content p {
-    margin-top: 16px;
-    text-align: justify; }
-  .content-container .page-content section {
+  #home .page-content #welcome,
+  #home .page-content #gallery-preview,
+  #home .page-content #posts-preview,
+  #home .page-content #about-me-preview,
+  #posts-page .page-content #welcome,
+  #posts-page .page-content #gallery-preview,
+  #posts-page .page-content #posts-preview,
+  #posts-page .page-content #about-me-preview,
+  #gallery-page .page-content #welcome,
+  #gallery-page .page-content #gallery-preview,
+  #gallery-page .page-content #posts-preview,
+  #gallery-page .page-content #about-me-preview,
+  #about-page .page-content #welcome,
+  #about-page .page-content #gallery-preview,
+  #about-page .page-content #posts-preview,
+  #about-page .page-content #about-me-preview {
     padding-left: 10px;
     padding-right: 10px;
     color: #03113d; }
-    .content-container .page-content section .profile-image-container {
-      margin: 0px auto;
-      width: 250px;
-      z-index: -1; }
-      .content-container .page-content section .profile-image-container #profile-img {
-        border-radius: 50%;
-        width: 100%;
-        height: 250px;
-        margin-top: 16px; }
-    .content-container .page-content section .btn-container .button {
-      display: block;
-      text-decoration: none;
-      width: 200px;
-      padding: 10px 5px;
-      margin: 16px auto 0; }
-    .content-container .page-content section .btn-container .main-btn {
-      color: white;
-      background-color: #03113d; }
-    .content-container .page-content section .btn-container .secondary-btn {
-      color: #03113d;
-      background-color: white;
-      border: 1px solid #03113d; }
-    .content-container .page-content section .image-container img {
+  #home .page-content #welcome .image-container,
+  #posts-page .page-content #welcome .image-container,
+  #gallery-page .page-content #welcome .image-container,
+  #about-page .page-content #welcome .image-container {
+    margin-bottom: 20px; }
+    #home .page-content #welcome .image-container img,
+    #posts-page .page-content #welcome .image-container img,
+    #gallery-page .page-content #welcome .image-container img,
+    #about-page .page-content #welcome .image-container img {
       width: 100%; }
+  #home .page-content #gallery-preview,
+  #home .page-content #albums,
+  #posts-page .page-content #gallery-preview,
+  #posts-page .page-content #albums,
+  #gallery-page .page-content #gallery-preview,
+  #gallery-page .page-content #albums,
+  #about-page .page-content #gallery-preview,
+  #about-page .page-content #albums {
+    padding-left: 0px;
+    padding-right: 0px; }
+    #home .page-content #gallery-preview .image-container img,
+    #home .page-content #albums .image-container img,
+    #posts-page .page-content #gallery-preview .image-container img,
+    #posts-page .page-content #albums .image-container img,
+    #gallery-page .page-content #gallery-preview .image-container img,
+    #gallery-page .page-content #albums .image-container img,
+    #about-page .page-content #gallery-preview .image-container img,
+    #about-page .page-content #albums .image-container img {
+      width: 100%; }
+  #home .page-content #about-me-preview .profile-image-container,
+  #home .page-content #about-me .profile-image-container,
+  #posts-page .page-content #about-me-preview .profile-image-container,
+  #posts-page .page-content #about-me .profile-image-container,
+  #gallery-page .page-content #about-me-preview .profile-image-container,
+  #gallery-page .page-content #about-me .profile-image-container,
+  #about-page .page-content #about-me-preview .profile-image-container,
+  #about-page .page-content #about-me .profile-image-container {
+    margin: 0px auto 20px;
+    width: 250px;
+    z-index: -1; }
+    #home .page-content #about-me-preview .profile-image-container #profile-img,
+    #home .page-content #about-me .profile-image-container #profile-img,
+    #posts-page .page-content #about-me-preview .profile-image-container #profile-img,
+    #posts-page .page-content #about-me .profile-image-container #profile-img,
+    #gallery-page .page-content #about-me-preview .profile-image-container #profile-img,
+    #gallery-page .page-content #about-me .profile-image-container #profile-img,
+    #about-page .page-content #about-me-preview .profile-image-container #profile-img,
+    #about-page .page-content #about-me .profile-image-container #profile-img {
+      border-radius: 50%;
+      width: 100%;
+      height: 250px; }
 
 /*(4) PAGE CONTENT END*/
-/*(5) POST STYLING START*/
+/*(5) BUTTONS START */
+.btn-container .button {
+  display: block;
+  text-decoration: none;
+  width: 200px;
+  padding: 10px 5px;
+  margin: 20px auto 0; }
+.btn-container .main-btn {
+  color: white;
+  background-color: #03113d; }
+.btn-container .secondary-btn {
+  color: #03113d;
+  background-color: white;
+  border: 1px solid #03113d; }
+
+/*(5) BUTTONS END */
+/*(6) POST AND GALLERY CARDS BEGIN */
 .card-deck .no-rl-padding {
   padding-right: 0;
   padding-left: 0; }
@@ -183,15 +280,13 @@ body, html {
   .card-deck .card .card-block {
     padding-bottom: 0; }
   .card-deck .card .date-and-time {
-    font-size: 14px;
     margin-bottom: 5px; }
   .card-deck .card .album-title {
     position: absolute;
     width: 200px;
     height: 40px;
-    bottom: 00px;
+    bottom: 20px;
     left: 0;
-    right: 0;
     background-color: white;
     color: #03113d;
     text-align: center;
@@ -202,24 +297,17 @@ body, html {
   border-color: lightgray;
   margin: 20px auto; }
 
-#posts h2 {
-  margin-bottom: 20px; }
-
+/*(6) POST AND GALLERY CARDS END */
+/*(7) POST.PHP PAGE BEGIN*/
 .post-container .post-content {
   text-align: justify; }
 .post-container .date-and-time {
-  font-size: 14px;
   margin-bottom: 5px; }
 
-/*(5) POST STYLING END*/
-/*(6) ABOUT ME STYLING START*/
-.profile-image-container {
-  margin: 91px auto 0px;
-  width: 250px;
-  z-index: -1; }
-  .profile-image-container #profile-img {
-    border-radius: 50%;
-    width: 100%;
-    height: 250px; }
-
-/*(6) ABOUT ME STYLING END*/
+/*(7) POST.PHP PAGE END*/
+.footer {
+  width: 100%;
+  height: 300px;
+  background-color: #03113d;
+  color: white;
+  margin-top: 20px; }

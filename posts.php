@@ -2,10 +2,10 @@
 
 <?php include "includes/navigation.php"; ?>
 
-<div id="post" class="content-container">
+<div id="posts-page" class="content-container">
     <div class="page-content">
-        <section class="light">
-            <h2>Posts</h2>
+        <section id="posts" class="light">
+            <h3>Posts</h3>
 
             <div class='card-deck'>
 
@@ -33,7 +33,7 @@
                             </a>
 
                             <div class="card-block no-rl-padding">
-                                <h3 class="card-title"><?php echo $post_title;?></h3>
+                                <h4 class="card-title"><?php echo $post_title;?></h4>
                                 
                                 
                                 <p class="card-text"><?php echo $post_content;?></p> 

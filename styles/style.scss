@@ -1,351 +1,367 @@
  /*
-(1) VARIABLES END
-(2) BODY AND HTML START
-(3) NAVIGATION END
-(4) PAGE CONTENT START
-(5) POST STYLING
-(6) ABOUT ME STYLING
+(1) VARIABLES
+(2) BODY AND HTML
+(3) NAVIGATION
+(4) PAGE CONTENT
+(5) BUTTONS
+(6) POST AND GALLERY CARDS
+(7) POST.PHP PAGE
 */
 
 
 /*(1) VARIABLES START*/
 
-$main-bg: white;
-$main_nav_color: white;
-$active-link: #03113D;
-$text: #03113D;
+    $main-bg: white;
+    $main_nav_color: white;
+    $active-link: #03113D;
+    $text: #03113D;
 
 /*(1) VARIABLES END*/
 
 
 /*(2) BODY AND HTML START*/
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    color: $active-link;
-}
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    } 
 
-body, html{
-    background-color: $main-bg;
-    z-index: -2;
-}
+    body, html{
+        background-color: $main-bg;
+        z-index: -2;
+    }
 
 /*(2) BODY AND HTML START*/
 
 
 /*(3) NAVIGATION START*/
 
-.nav-container{
-    position: fixed;
-    top: 0;
-    background-color: $main_nav_color;
-    color: 	$text;
-    width: 100%;
-    height: 75px;
-    border-bottom: 1px solid #03113D;
-    z-index: 99;
-    
-    #my-logo{
-        h1{
-            text-align: center;
-            line-height: 50px;
-            font-size: 1.7rem;
-            width: 200px;
-            height: 50px;
-            margin: 12px auto 0;
-
-            a{
-                text-decoration: none;
-                color: $active-link;
-            }
-        }
-    }
-
-    .nav-btn{
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        right: 3px;
-        top: 50%;
-        transform: translate(-40%, -40%);
-
-        .hamburger-container{
-
-            width: 20px;
-            height: 2px;
-            background-color: 	$text;
-            border-radius:5px;
-            position:relative;
-            text-align: left;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-
-            &:before,
-            &:after{
-                content: '';
-                width: 100%;
-                height: 2px;
-                background-color:	$text;
-                position:absolute;
-                border-radius:5px;
-            }
-
-            &:before{
-                top: -6px;
-            }
-
-            &:after{
-                top: 6px;
-            }
-        }
-        
-    }
-
-    .nav-content-container{
-        position: absolute;
+    .nav-container{
+        position: fixed;
         top: 0;
-        left: -270px;
-        width: 270px;
-        height: 100vh;
-        border-right: 1px solid 	$text;
         background-color: $main_nav_color;
-        transition: all 0.5s;
+        color: 	$text;
+        width: 100%;
+        height: 75px;
+        border-bottom: 1px solid #03113D;
+        z-index: 99;
+        
+        #my-logo{
+            h1{
+                text-align: center;
+                line-height: 50px;
+                font-size: 1.7rem;
+                width: 200px;
+                height: 50px;
+                margin: 12px auto 0;
 
-        &.open{
-            left: 0;
-        }
-
-        .nav-items-container{
-            position: absolute;
-            width: 100%;
-            top: 100px;
-
-            ul{
-                list-style-type: none;
-                border-top: 1px solid 	$text;
-                li{
-                    a{
-                        display: block;
-                        padding: 15px 10px;
-                        text-decoration: none;
-                        color: 	$text;
-                        border-bottom: 1px solid $text;
-                        font-weight: bold;
-                        text-transform: uppercase;
-
-                        &.active{
-                            background-color: $active-link;
-                            color: white;
-                        }
-                    }
+                a{
+                    text-decoration: none;
+                    color: $active-link;
                 }
             }
         }
 
-        .social-nav-items-container{
+        .nav-btn{
             position: absolute;
-            width: 100%;
-            bottom: 50px;
-            padding-left: 8px;
-            ul{
-                list-style-type: none;
-                li{
-                    display: inline-block;
-                    width: 23%;
-                    a{
-                        display: block;
-                        padding: 20px 10px;
-                        text-align: center;
-                        color: 	$text;
-                        text-decoration: none;
+            width: 20px;
+            height: 20px;
+            right: 3px;
+            top: 50%;
+            transform: translate(-40%, -40%);
 
-                        img{
-                            width: 100%;
+            .hamburger-container{
+                width: 20px;
+                height: 2px;
+                background-color: 	$text;
+                border-radius:5px;
+                position:relative;
+                text-align: left;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+
+                &:before,
+                &:after{
+                    content: '';
+                    width: 100%;
+                    height: 2px;
+                    background-color:	$text;
+                    position:absolute;
+                    border-radius:5px;
+                }
+
+                &:before{
+                    top: -6px;
+                }
+
+                &:after{
+                    top: 6px;
+                }
+            }
+            
+        }
+
+        .nav-content-container{
+            position: absolute;
+            top: 0;
+            left: -270px;
+            width: 270px;
+            height: 100vh;
+            border-right: 1px solid 	$text;
+            background-color: $main_nav_color;
+            transition: all 0.5s;
+
+            &.open{
+                left: 0;
+            }
+
+            .nav-items-container{
+                position: absolute;
+                width: 100%;
+                top: 100px;
+
+                ul{
+                    list-style-type: none;
+                    border-top: 1px solid 	$text;
+                    li{
+                        a{
+                            display: block;
+                            padding: 15px 10px;
+                            text-decoration: none;
+                            color: 	$text;
+                            border-bottom: 1px solid $text;
+                            font-weight: bold;
+                            text-transform: uppercase;
+
+                            &.active{
+                                background-color: $active-link;
+                                color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .social-nav-items-container{
+                position: absolute;
+                width: 100%;
+                bottom: 50px;
+                padding-left: 8px;
+                ul{
+                    list-style-type: none;
+                    li{
+                        display: inline-block;
+                        width: 23%;
+                        a{
+                            display: block;
+                            padding: 20px 10px;
+                            text-align: center;
+                            color: 	$text;
+                            text-decoration: none;
+
+                            img{
+                                width: 100%;
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
 
 /*(3) NAVIGATION END*/
 
 
 /*(4) PAGE CONTENT START*/
 
-#home,
-#post{
-    .page-content{
-        margin-top: 91px;
+    #home,
+    #posts-page,
+    #gallery-page,
+    #about-page{
+        .page-content{
+            margin-top: 95px;
 
-        h2{
-            margin-bottom: 20px;
+            h3{
+                margin-bottom: 20px;
+            }
+
+            #posts,
+            #albums,
+            #about-me{
+                padding: 0 10px;
+
+                p{
+                    text-align: justify;
+                }
+            }
         }
     }
-}
 
-#about{
-    .page-content{
-        padding: 0 10px;
-    }
-}
 
-.content-container{
-
-    .page-content{
-        text-align: center;
-        
-        .section-split{
-            width: 90%;
-            border-color: $active-link;
-            margin: 20px auto;
-        }
-
-        h2{
+    #home,
+    #posts-page,
+    #gallery-page,
+    #about-page{
+        h3{
             text-transform: uppercase;
             display: inline-block;
             text-decoration: underline;
+            font-weight: bold;
         }
 
         p{
-            margin-top: 16px;
             text-align: justify;
         }
 
-        section{
-            padding-left: 10px;
-            padding-right: 10px;
-            color: $active-link;
+        .page-content{
+            text-align: center;
+            
+            .section-split{
+                width: 90%;
+                border-color: $active-link;
+                margin: 20px auto;
+            }
 
-            .profile-image-container{
-                margin: 0px auto;
-                width: 250px;
-                z-index: -1;
+            #welcome,
+            #gallery-preview,
+            #posts-preview,
+            #about-me-preview{
+                padding-left: 10px;
+                padding-right: 10px;
+                color: $active-link;
+            }
 
-                #profile-img{
-                    border-radius: 50%;
-                    width: 100%;
-                    height: 250px;
-                    margin-top: 16px;
+            #welcome{
+                .image-container{
+                    margin-bottom: 20px;
+                    img{
+                        width: 100%
+                    }
                 }
             }
 
-            .btn-container{
-                .button{
-                    display: block;
-                    text-decoration: none;
-                    width: 200px;
-                    padding: 10px 5px;
-                    margin: 16px auto 0;
-                }
-
-                .main-btn{
-                    color: white;
-                    background-color: $active-link;
-                }
-
-                .secondary-btn{
-                    color: $active-link;
-                    background-color: white;
-                    border: 1px solid $active-link;
+            #gallery-preview,
+            #albums{
+                padding-left: 0px;
+                padding-right: 0px;
+                .image-container{
+                    img{
+                        width: 100%
+                    }
                 }
             }
 
-            .image-container{
+            #about-me-preview,
+            #about-me{
+                .profile-image-container{
+                    margin: 0px auto 20px;
+                    width: 250px;
+                    z-index: -1;
 
-                img{
-                    width: 100%
+                    #profile-img{
+                        border-radius: 50%;
+                        width: 100%;
+                        height: 250px;
+                    }
                 }
             }
-        }
-    }  
-}
+        }  
+    }
 
 /*(4) PAGE CONTENT END*/
 
 
-/*(5) POST STYLING START*/
-.card-deck{
-    
-    .no-rl-padding{
-        padding-right: 0;
-        padding-left: 0;
-    }
-
-    .card{
-        border: none;
-        .card-img-top{
-            width: 100%;
-            border-radius: 0;
-        }
-
-        .card-block{
-            padding-bottom: 0;
-        }
-
-        .date-and-time{
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .album-title{
-            position: absolute;
+/*(5) BUTTONS START */
+    .btn-container{
+        .button{
+            display: block;
+            text-decoration: none;
             width: 200px;
-            height: 40px;
-            bottom: 00px;
-            left: 0;
-            right: 0;
-            background-color: white;
+            padding: 10px 5px;
+            margin: 20px auto 0;
+        }
+
+        .main-btn{
+            color: white;
+            background-color: $active-link;
+        }
+
+        .secondary-btn{
             color: $active-link;
-            text-align: center;
-            line-height: 40px;
+            background-color: white;
             border: 1px solid $active-link;
         }
     }
+/*(5) BUTTONS END */
 
-    .post-split{
-        width: 30%;
-        border-color: lightgray;
-        margin: 20px auto;
+
+/*(6) POST AND GALLERY CARDS BEGIN */
+    .card-deck{
+        
+        .no-rl-padding{
+            padding-right: 0;
+            padding-left: 0;
+        }
+
+        .card{
+            border: none;
+            .card-img-top{
+                width: 100%;
+                border-radius: 0;
+            }
+
+            .card-block{
+                padding-bottom: 0;
+            }
+
+            .date-and-time{
+                margin-bottom: 5px;
+            }
+
+            .album-title{
+                position: absolute;
+                width: 200px;
+                height: 40px;
+                bottom: 20px;
+                left: 0;
+                background-color: white;
+                color: $active-link;
+                text-align: center;
+                line-height: 40px;
+                border: 1px solid $active-link;
+            }
+        }
+
+        .post-split{
+            width: 30%;
+            border-color: lightgray;
+            margin: 20px auto;
+        }
     }
+/*(6) POST AND GALLERY CARDS END */
+
+
+/*(7) POST.PHP PAGE BEGIN*/
+
+    .post-container{
+        .post-content{
+            text-align: justify;
+        }
+
+        .date-and-time{
+            margin-bottom: 5px;
+        }
+    }
+
+/*(7) POST.PHP PAGE END*/
+
+
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: $active-link;
+    color: white;
+    margin-top: 20px;
 }
-
-#posts{
-    h2{
-        margin-bottom: 20px;
-    }
-}
-
-.post-container{
-    .post-content{
-        text-align: justify;
-    }
-
-    .date-and-time{
-        font-size: 14px;
-        margin-bottom: 5px;
-    }
-}
-
-/*(5) POST STYLING END*/
-
-
-/*(6) ABOUT ME STYLING START*/
-
-.profile-image-container{
-    margin: 91px auto 0px;
-    width: 250px;
-    z-index: -1;
-
-    #profile-img{
-        border-radius: 50%;
-        width: 100%;
-        height: 250px;
-    }
-}
-
-/*(6) ABOUT ME STYLING END*/

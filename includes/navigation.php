@@ -28,7 +28,7 @@
                 <ul>
                     <li><a href="index.php" <?php classActive("index");?>>Home</a></li>
                     <li><a href="posts.php" <?php classActive("posts");?>>Posts</a></li>
-                    <li><a href="portfolio.php" <?php classActive("portfolio");?>>Portfolio</a></li>
+                    <li><a href="gallery.php" <?php classActive("gallery");?>>Gallery</a></li>
                     <li><a href="about.php" <?php classActive("about");?>>About Me</a></li>
                 </ul>
             </div>
