@@ -178,6 +178,7 @@
 
     #home,
     #posts-page,
+    #post-page,
     #gallery-page,
     #about-page{
         .page-content{
@@ -202,6 +203,7 @@
 
     #home,
     #posts-page,
+    #post-page,
     #gallery-page,
     #about-page{
         h3{
@@ -243,7 +245,8 @@
             }
 
             #gallery-preview,
-            #albums{
+            #albums,
+            #post{
                 padding-left: 0px;
                 padding-right: 0px;
                 .image-container{
@@ -346,6 +349,8 @@
 /*(7) POST.PHP PAGE BEGIN*/
 
     .post-container{
+        padding-left: 10px;
+        padding-right: 10px;
         .post-content{
             text-align: justify;
         }

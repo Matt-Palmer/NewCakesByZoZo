@@ -2,9 +2,9 @@
 
 <?php include "includes/navigation.php"; ?>
 
-<div id="post" class="content-container">
+<div id="post-page" class="content-container">
     <div class="page-content">
-        <section>
+        <section id="post">
             <?php 
 
                 if(isset($_GET['post_id'])){

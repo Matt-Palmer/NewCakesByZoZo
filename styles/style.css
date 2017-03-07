@@ -120,11 +120,13 @@ body, html {
 /*(4) PAGE CONTENT START*/
 #home .page-content,
 #posts-page .page-content,
+#post-page .page-content,
 #gallery-page .page-content,
 #about-page .page-content {
   margin-top: 95px; }
   #home .page-content h3,
   #posts-page .page-content h3,
+  #post-page .page-content h3,
   #gallery-page .page-content h3,
   #about-page .page-content h3 {
     margin-bottom: 20px; }
@@ -134,6 +136,9 @@ body, html {
   #posts-page .page-content #posts,
   #posts-page .page-content #albums,
   #posts-page .page-content #about-me,
+  #post-page .page-content #posts,
+  #post-page .page-content #albums,
+  #post-page .page-content #about-me,
   #gallery-page .page-content #posts,
   #gallery-page .page-content #albums,
   #gallery-page .page-content #about-me,
@@ -147,6 +152,9 @@ body, html {
     #posts-page .page-content #posts p,
     #posts-page .page-content #albums p,
     #posts-page .page-content #about-me p,
+    #post-page .page-content #posts p,
+    #post-page .page-content #albums p,
+    #post-page .page-content #about-me p,
     #gallery-page .page-content #posts p,
     #gallery-page .page-content #albums p,
     #gallery-page .page-content #about-me p,
@@ -157,6 +165,7 @@ body, html {
 
 #home h3,
 #posts-page h3,
+#post-page h3,
 #gallery-page h3,
 #about-page h3 {
   text-transform: uppercase;
@@ -165,16 +174,19 @@ body, html {
   font-weight: bold; }
 #home p,
 #posts-page p,
+#post-page p,
 #gallery-page p,
 #about-page p {
   text-align: justify; }
 #home .page-content,
 #posts-page .page-content,
+#post-page .page-content,
 #gallery-page .page-content,
 #about-page .page-content {
   text-align: center; }
   #home .page-content .section-split,
   #posts-page .page-content .section-split,
+  #post-page .page-content .section-split,
   #gallery-page .page-content .section-split,
   #about-page .page-content .section-split {
     width: 90%;
@@ -188,6 +200,10 @@ body, html {
   #posts-page .page-content #gallery-preview,
   #posts-page .page-content #posts-preview,
   #posts-page .page-content #about-me-preview,
+  #post-page .page-content #welcome,
+  #post-page .page-content #gallery-preview,
+  #post-page .page-content #posts-preview,
+  #post-page .page-content #about-me-preview,
   #gallery-page .page-content #welcome,
   #gallery-page .page-content #gallery-preview,
   #gallery-page .page-content #posts-preview,
@@ -201,37 +217,55 @@ body, html {
     color: #03113d; }
   #home .page-content #welcome .image-container,
   #posts-page .page-content #welcome .image-container,
+  #post-page .page-content #welcome .image-container,
   #gallery-page .page-content #welcome .image-container,
   #about-page .page-content #welcome .image-container {
     margin-bottom: 20px; }
     #home .page-content #welcome .image-container img,
     #posts-page .page-content #welcome .image-container img,
+    #post-page .page-content #welcome .image-container img,
     #gallery-page .page-content #welcome .image-container img,
     #about-page .page-content #welcome .image-container img {
       width: 100%; }
   #home .page-content #gallery-preview,
   #home .page-content #albums,
+  #home .page-content #post,
   #posts-page .page-content #gallery-preview,
   #posts-page .page-content #albums,
+  #posts-page .page-content #post,
+  #post-page .page-content #gallery-preview,
+  #post-page .page-content #albums,
+  #post-page .page-content #post,
   #gallery-page .page-content #gallery-preview,
   #gallery-page .page-content #albums,
+  #gallery-page .page-content #post,
   #about-page .page-content #gallery-preview,
-  #about-page .page-content #albums {
+  #about-page .page-content #albums,
+  #about-page .page-content #post {
     padding-left: 0px;
     padding-right: 0px; }
     #home .page-content #gallery-preview .image-container img,
     #home .page-content #albums .image-container img,
+    #home .page-content #post .image-container img,
     #posts-page .page-content #gallery-preview .image-container img,
     #posts-page .page-content #albums .image-container img,
+    #posts-page .page-content #post .image-container img,
+    #post-page .page-content #gallery-preview .image-container img,
+    #post-page .page-content #albums .image-container img,
+    #post-page .page-content #post .image-container img,
     #gallery-page .page-content #gallery-preview .image-container img,
     #gallery-page .page-content #albums .image-container img,
+    #gallery-page .page-content #post .image-container img,
     #about-page .page-content #gallery-preview .image-container img,
-    #about-page .page-content #albums .image-container img {
+    #about-page .page-content #albums .image-container img,
+    #about-page .page-content #post .image-container img {
       width: 100%; }
   #home .page-content #about-me-preview .profile-image-container,
   #home .page-content #about-me .profile-image-container,
   #posts-page .page-content #about-me-preview .profile-image-container,
   #posts-page .page-content #about-me .profile-image-container,
+  #post-page .page-content #about-me-preview .profile-image-container,
+  #post-page .page-content #about-me .profile-image-container,
   #gallery-page .page-content #about-me-preview .profile-image-container,
   #gallery-page .page-content #about-me .profile-image-container,
   #about-page .page-content #about-me-preview .profile-image-container,
@@ -243,6 +277,8 @@ body, html {
     #home .page-content #about-me .profile-image-container #profile-img,
     #posts-page .page-content #about-me-preview .profile-image-container #profile-img,
     #posts-page .page-content #about-me .profile-image-container #profile-img,
+    #post-page .page-content #about-me-preview .profile-image-container #profile-img,
+    #post-page .page-content #about-me .profile-image-container #profile-img,
     #gallery-page .page-content #about-me-preview .profile-image-container #profile-img,
     #gallery-page .page-content #about-me .profile-image-container #profile-img,
     #about-page .page-content #about-me-preview .profile-image-container #profile-img,
@@ -299,10 +335,13 @@ body, html {
 
 /*(6) POST AND GALLERY CARDS END */
 /*(7) POST.PHP PAGE BEGIN*/
-.post-container .post-content {
-  text-align: justify; }
-.post-container .date-and-time {
-  margin-bottom: 5px; }
+.post-container {
+  padding-left: 10px;
+  padding-right: 10px; }
+  .post-container .post-content {
+    text-align: justify; }
+  .post-container .date-and-time {
+    margin-bottom: 5px; }
 
 /*(7) POST.PHP PAGE END*/
 .footer {
