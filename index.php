@@ -35,7 +35,7 @@
 
                 <?php
 
-                    $select_recent_albums = "SELECT * FROM gallery WHERE image_status = 'main' ORDER BY image_date DESC LIMIT 8";
+                    $select_recent_albums = "SELECT * FROM gallery WHERE image_status = 'main' ORDER BY image_date DESC LIMIT 3";
                     $select_recent_albums_query = mysqli_query($connection, $select_recent_albums);
                     
                     echo "<div class='card-deck'>";
@@ -96,7 +96,7 @@
 
                 <?php 
 
-                    $get_recent_posts = "SELECT * FROM posts ORDER BY post_date DESC LIMIT 6";
+                    $get_recent_posts = "SELECT * FROM posts ORDER BY post_date DESC LIMIT 3";
                     $get_recent_posts_query = mysqli_query($connection, $get_recent_posts);
 
                     while($post = mysqli_fetch_assoc($get_recent_posts_query)){

@@ -171,13 +171,21 @@ body, html {
   text-transform: uppercase;
   display: inline-block;
   text-decoration: underline;
-  font-weight: bold; }
+  font-weight: bold;
+  color: #03113d; }
+#home h4,
+#posts-page h4,
+#post-page h4,
+#gallery-page h4,
+#about-page h4 {
+  color: #03113d; }
 #home p,
 #posts-page p,
 #post-page p,
 #gallery-page p,
 #about-page p {
-  text-align: justify; }
+  text-align: justify;
+  color: #03113d; }
 #home .page-content,
 #posts-page .page-content,
 #post-page .page-content,
@@ -316,6 +324,7 @@ body, html {
   .card-deck .card .card-block {
     padding-bottom: 0; }
   .card-deck .card .date-and-time {
+    font-size: 14px;
     margin-bottom: 5px; }
   .card-deck .card .album-title {
     position: absolute;
@@ -341,12 +350,167 @@ body, html {
   .post-container .post-content {
     text-align: justify; }
   .post-container .date-and-time {
+    font-size: 14px;
     margin-bottom: 5px; }
 
+#add-comment-form h4,
+.media h4 {
+  display: block;
+  width: 100%;
+  padding-top: 20px;
+  margin-bottom: 20px;
+  color: white; }
+#add-comment-form p,
+.media p {
+  display: block; }
+
+#add-comment-form {
+  max-width: 650px;
+  background-color: #03113d;
+  color: white;
+  padding: 0 10px 10px 10px;
+  text-align: left;
+  margin: 0 10px; }
+  #add-comment-form .form-group {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 20px; }
+    #add-comment-form .form-group .form-control {
+      width: 100%;
+      border-radius: 0; }
+
+.media {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  height: auto;
+  text-align: left; }
+  .media .row {
+    margin-right: 0;
+    margin-left: 0; }
+    .media .row .col-sm-12 {
+      padding-left: 0;
+      padding-right: 0; }
+  .media h4 {
+    padding-top: 0; }
+  .media .date-and-time {
+    font-size: 14px;
+    margin-bottom: 0; }
+
+.post-split {
+  width: 30%;
+  border-color: lightgray;
+  margin: 20px auto; }
+
 /*(7) POST.PHP PAGE END*/
+/*(8) ALBUM.PHP START */
+.grid {
+  position: relative;
+  margin-bottom: -20px; }
+  .grid .item {
+    display: block;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    padding: 0 10px; }
+  .grid .item.muuri-hidden {
+    z-index: 0; }
+  .grid .item-content {
+    position: relative;
+    width: 100%;
+    height: 100%; }
+  .grid img {
+    width: 100%; }
+  .grid .post-split {
+    width: 30%;
+    border-color: lightgray;
+    margin: 20px auto; }
+
+/*(8) ALBUM.PHP END */
+.overlay {
+  display: none;
+  position: fixed;
+  z-index: 99;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  /* Next & previous buttons */
+  /* Position the "next button" to the right */ }
+  .overlay .overlay-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1200px; }
+  .overlay .overlay-container {
+    display: none;
+    margin-bottom: 20px;
+    max-height: 450px; }
+    .overlay .overlay-container img {
+      width: 100%; }
+  .overlay .column {
+    float: left;
+    width: 25%;
+    padding: 0 8px; }
+    .overlay .column .demo {
+      width: 100%; }
+  .overlay .close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold; }
+  .overlay .close:hover,
+  .overlay .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer; }
+  .overlay .prev,
+  .overlay .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 450px;
+    user-select: none;
+    -webkit-user-select: none;
+    text-decoration: none; }
+  .overlay .prev {
+    left: 0; }
+  .overlay .next {
+    right: 0; }
+  .overlay .mySlides {
+    display: none; }
+  .overlay img.demo {
+    opacity: 0.6; }
+  .overlay .active,
+  .overlay .demo:hover {
+    opacity: 1; }
+  .overlay img.hover-shadow {
+    transition: 0.3s; }
+  .overlay .hover-shadow:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); }
+  .overlay .all-images {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 20px; }
+
 .footer {
   width: 100%;
   height: 300px;
   background-color: #03113d;
   color: white;
   margin-top: 20px; }
+
+@media only screen and (min-width: 1200px) {
+  .grid .item {
+    width: calc(25% - 10px); }
+  .grid img {
+    max-width: 800px;
+    border-radius: 8px; } }

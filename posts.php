@@ -28,7 +28,7 @@
 
                     <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3 no-rl-padding">
                         <div class="card">
-                            <a href="">
+                            <a href="post.php?post_id=<?php echo $post_id; ?>">
                                 <img class="card-img-top" src="images/<?php echo $post_image; ?>" alt="#">
                             </a>
 
@@ -55,6 +55,9 @@
 
 
                 ?>
+
+
+                
                 
             </div>
         </section>

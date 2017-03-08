@@ -3,9 +3,20 @@
     function classActive($requestUri){
         $current_file = basename($_SERVER['REQUEST_URI'], '.php');
 
-        if($current_file == $requestUri){
-            echo 'class="active"';
+        $str = explode('.', $current_file);
+
+        for($i = 0; $i < sizeof($requestUri); $i++){
+
+            for($j = 0; $j < sizeof($str); $j++){
+
+                if($str[$j] == $requestUri[$i]){
+                    echo 'class="active"';
+                }
+
+            }
+
         }
+        
     }
 
 ?>
@@ -26,12 +37,13 @@
 
             <div class="nav-items-container">
                 <ul>
-                    <li><a href="index.php" <?php classActive("index");?>>Home</a></li>
-                    <li><a href="posts.php" <?php classActive("posts");?>>Posts</a></li>
-                    <li><a href="gallery.php" <?php classActive("gallery");?>>Gallery</a></li>
-                    <li><a href="about.php" <?php classActive("about");?>>About Me</a></li>
+                    <li><a href="index.php" <?php classActive(array('index', 'NewCakesByZoZo'));?>>Home</a></li>
+                    <li><a href="posts.php" <?php classActive(array('posts', 'post'));?>>Posts</a></li>
+                    <li><a href="gallery.php" <?php classActive(array('gallery', 'album'));?>>Gallery</a></li>
+                    <li><a href="about.php" <?php classActive(array('about'));?>>About Me</a></li>
                 </ul>
             </div>
+
 
             <div class="social-nav-items-container">
                 <ul>
@@ -48,3 +60,5 @@
     
 
 </nav>
+
+
