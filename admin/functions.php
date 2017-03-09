@@ -396,6 +396,45 @@ function deleteUser(){
     }
 }
 
+function displayImageCommentTable(){
+
+    global $connection;
+
+    $get_comments = "SELECT * FROM image_comments";
+    $get_comments_query = mysqli_query($connection, $get_comments);
+
+    while($comment = mysqli_fetch_assoc($get_comments_query)){
+        $comment_id = $comment['comment_id'];
+        $comment_image_id = $comment['comment_image_id'];
+        $comment_author = $comment['comment_author'];
+        $comment_content = $comment['comment_content'];
+        $comment_status = $comment['comment_status'];
+        $comment_date = $comment['comment_date'];
+        
+
+        echo "<tr>";
+        echo "<td>{$comment_id}</td>";       
+        echo "<td>{$comment_author}</td>";            
+        echo "<td>{$comment_content}</td>";   
+        echo "<td>{$comment_status}</td>";
+
+        $get_image = "SELECT * FROM gallery WHERE image_id = $comment_image_id";
+        $get_image_query = mysqli_query($connection, $get_image);
+
+        while($image = mysqli_fetch_assoc($get_image_query)){
+            $image_id = $image['image_id'];
+            $selected_image = $image['image_one'];
+            echo "<td><img src='../images/$selected_image' width='100px'></td>"; 
+        }
+
+        echo "<td>{$comment_date}</td>";            
+        echo "<td><a href='image_comments.php?approve=$comment_id'>Approve</a></td>";            
+        echo "<td><a href='image_comments.php?decline=$comment_id'>Decline</a></td>";            
+        echo "<td><a href='image_comments.php?delete=$comment_id'>Delete</a></td>";           
+        echo "</tr>";
+    }
+}
+
 function displayCommentTable(){
 
     global $connection;
@@ -428,63 +467,120 @@ function displayCommentTable(){
         }
 
         echo "<td>{$comment_date}</td>";            
-        echo "<td><a href='comments.php?approve=$comment_id'>Approve</a></td>";            
-        echo "<td><a href='comments.php?decline=$comment_id'>Decline</a></td>";            
-        echo "<td><a href='comments.php?delete=$comment_id'>Delete</a></td>";           
+        echo "<td><a href='post_comments.php?approve=$comment_id'>Approve</a></td>";            
+        echo "<td><a href='post_comments.php?decline=$comment_id'>Decline</a></td>";            
+        echo "<td><a href='post_comments.php?delete=$comment_id'>Delete</a></td>";           
         echo "</tr>";
     }
 }
 
-function deleteComments(){
+function deleteComments($commentType){
 
     global $connection;
 
-    if(isset($_GET['delete'])){
-        $comment_id = $_GET['delete'];//delete refers to the href in the link 'posts.php?delete'
+    if($commentType == 'image'){
 
-        $get_comment_post_id = "SELECT comment_post_id FROM comments WHERE comment_id = $comment_id";
-        $get_comment_post_id_query = mysqli_query($connection, $get_comment_post_id);
-        $row = mysqli_fetch_assoc($get_comment_post_id_query);
-        $comment_post_id = $row['comment_post_id'];
+        if(isset($_GET['delete'])){
+            $comment_id = $_GET['delete'];//delete refers to the href in the link 'posts.php?delete'
 
-        $query = "DELETE FROM comments WHERE comment_id = {$comment_id}";
-        $delete_query = mysqli_query($connection, $query);
+            $get_comment_image_id = "SELECT comment_image_id FROM image_comments WHERE comment_id = $comment_id";
+            $get_comment_image_id_query = mysqli_query($connection, $get_comment_image_id);
+            $comment = mysqli_fetch_assoc($get_comment_image_id_query);
+            $comment_image_id = $comment['comment_image_id'];
 
-        $update_comment_count_query = "UPDATE posts SET post_comment_count = post_comment_count - 1 WHERE post_id = $comment_post_id";
-        $update_comment_count = mysqli_query($connection, $update_comment_count_query);
+            $delete_comment = "DELETE FROM image_comments WHERE comment_id = {$comment_id}";
+            $delete_comment_query = mysqli_query($connection, $delete_comment);
 
-        echo "deleted";
-        header("Location: comments.php");
+            $update_comment_count_query = "UPDATE gallery SET image_comment_count = image_comment_count - 1 WHERE image_id = $comment_image_id";
+            $update_comment_count = mysqli_query($connection, $update_comment_count_query);
+
+            header("Location: image_comments.php");
+        }
+
+    }else{
+
+        if(isset($_GET['delete'])){
+            $comment_id = $_GET['delete'];//delete refers to the href in the link 'posts.php?delete'
+
+            $get_comment_post_id = "SELECT comment_post_id FROM comments WHERE comment_id = $comment_id";
+            $get_comment_post_id_query = mysqli_query($connection, $get_comment_post_id);
+            $row = mysqli_fetch_assoc($get_comment_post_id_query);
+            $comment_post_id = $row['comment_post_id'];
+
+            $query = "DELETE FROM comments WHERE comment_id = {$comment_id}";
+            $delete_query = mysqli_query($connection, $query);
+
+            $update_comment_count_query = "UPDATE posts SET post_comment_count = post_comment_count - 1 WHERE post_id = $comment_post_id";
+            $update_comment_count = mysqli_query($connection, $update_comment_count_query);
+
+            header("Location: post_comments.php");
+        }
+
     }
-}
-
-function approveComment(){
-    global $connection;
-
-    if(isset($_GET['approve'])){
-        $comment_id = $_GET['approve'];//delete refers to the href in the link 'posts.php?delete'
-
-        $query = "UPDATE comments SET comment_status = 'approved' WHERE comment_id = $comment_id";
-
-        $decline_query = mysqli_query($connection, $query);
-
-        header("Location: comments.php");
-    }
-}
-
-function rejectComment(){
-
-    global $connection;
     
-    if(isset($_GET['decline'])){
-        $comment_id = $_GET['decline'];//delete refers to the href in the link 'posts.php?delete'
+}
 
-        $query = "UPDATE comments SET comment_status = 'declined' WHERE comment_id = $comment_id";
+function approveComment($commentType){
+    global $connection;
 
-        $decline_query = mysqli_query($connection, $query);
+    if($commentType == 'image'){
 
-        header("Location: comments.php");
+        if(isset($_GET['approve'])){
+            $comment_id = $_GET['approve'];//delete refers to the href in the link 'posts.php?delete'
+
+            $decline_comment = "UPDATE image_comments SET comment_status = 'approved' WHERE comment_id = $comment_id";
+
+            $decline_comment_query = mysqli_query($connection, $decline_comment);
+
+            header("Location: image_comments.php");
+        }
+
+    }else{
+
+        if(isset($_GET['approve'])){
+            $comment_id = $_GET['approve'];//delete refers to the href in the link 'posts.php?delete'
+
+            $query = "UPDATE comments SET comment_status = 'approved' WHERE comment_id = $comment_id";
+
+            $decline_query = mysqli_query($connection, $query);
+
+            header("Location: post_comments.php");
+        }
+
     }
+
+}
+
+function rejectComment($commentType){
+
+    global $connection;
+
+    if($commentType == 'image'){
+
+        if(isset($_GET['decline'])){
+            $comment_id = $_GET['decline'];//delete refers to the href in the link 'posts.php?delete'
+
+            $decline_comment = "UPDATE image_comments SET comment_status = 'declined' WHERE comment_id = $comment_id";
+
+            $decline_comment_query = mysqli_query($connection, $decline_comment);
+
+            header("Location: image_comments.php");
+        }
+
+    }else{
+
+        if(isset($_GET['decline'])){
+            $comment_id = $_GET['decline'];//delete refers to the href in the link 'posts.php?delete'
+
+            $query = "UPDATE comments SET comment_status = 'declined' WHERE comment_id = $comment_id";
+
+            $decline_query = mysqli_query($connection, $query);
+
+            header("Location: post_comments.php");
+        }
+
+    }
+    
 }
 
 function confirmQuery($query){

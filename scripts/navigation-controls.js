@@ -15,5 +15,10 @@ $(document).ready(function(){
     })
 
 
+    $('#prev-page').click(function(){
+        parent.history.back();
+        return false;
+    });
+
 
 });

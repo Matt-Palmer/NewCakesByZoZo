@@ -19,10 +19,35 @@
         
     }
 
+    function displayBackBtn($requestUri){
+        $current_file = basename($_SERVER['REQUEST_URI'], '.php');
+
+        $str = explode('.', $current_file);
+
+        for($i = 0; $i < sizeof($requestUri); $i++){
+
+            for($j = 0; $j < sizeof($str); $j++){
+
+                if($str[$j] == $requestUri[$i]){
+                    echo "<div id='prev-page' class='prev-page fa fa-arrow-left'>";
+                    echo "</div>";
+                }
+
+            }
+
+        }
+    }
+
 ?>
 
 <nav class="nav-container">
     <div class="content-container">
+
+        <?php 
+
+            displayBackBtn(array('post', 'album', 'image_view'));
+
+        ?>
 
         <div id="my-logo">
             <h1><a href="index.php">Cakes By ZoZo</a></h1>

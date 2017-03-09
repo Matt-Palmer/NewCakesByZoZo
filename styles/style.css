@@ -68,6 +68,13 @@ body, html {
         top: -6px; }
       .nav-container .nav-btn .hamburger-container:after {
         top: 6px; }
+  .nav-container .prev-page {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    top: 40%;
+    text-align: center; }
   .nav-container .nav-content-container {
     position: absolute;
     top: 0;

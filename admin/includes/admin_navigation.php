@@ -37,8 +37,12 @@
                             <li class="nav-item">
                                 <a class="nav-link fa fa-tags" href="categories.php"> Categories<span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link fa fa-comments" href="comments.php"> Comments<span class="sr-only">(current)</span></a>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle fa fa-picture-o" href="http://example.com" id="gallery-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Comments
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="gallery-dropdown">
+                                    <a class="dropdown-item fa fa-binoculars" href="post_comments.php"> View All Images</a>
+                                    <a class="dropdown-item fa fa-binoculars" href="image_comments.php"> View Albums</a>
                             </li>
                         
                             <li class="nav-item">
