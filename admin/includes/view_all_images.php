@@ -21,13 +21,12 @@ if(isset($_POST['checkboxArray'])){
 
                 $imageOne = $row['image_one'];
                 $image_tags = $row['image_tags'];
-                $image_category = $row['image_category'];
                 $date = gmdate("y-m-d h:i:s");
 
             }
 
-            $query = "INSERT INTO gallery(image_category, image_tags, image_date, image_one) ";
-            $query .= "VALUES('$image_category', '$image_tags', '$date', '{$imageOne}')";
+            $query = "INSERT INTO gallery(image_tags, image_date, image_one) ";
+            $query .= "VALUES('$image_tags', '$date', '{$imageOne}')";
 
             $create_image_query = mysqli_query($connection, $query);
 

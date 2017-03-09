@@ -406,13 +406,30 @@ body, html {
 /*(8) ALBUM.PHP START */
 .grid {
   position: relative;
-  margin-bottom: -20px; }
+  margin-bottom: -20px;
+  height: auto;
+  /* Position the "next button" to the right */ }
   .grid .item {
     display: block;
     position: absolute;
     width: 100%;
     z-index: 1;
-    padding: 0 10px; }
+    padding: 0 10px;
+    /* Next & previous buttons */ }
+  .grid .prev,
+  .grid .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 450px;
+    user-select: none;
+    -webkit-user-select: none;
+    text-decoration: none; }
+  .grid .prev {
+    left: 0; }
+  .grid .next {
+    right: 0; }
   .grid .item.muuri-hidden {
     z-index: 0; }
   .grid .item-content {
@@ -442,9 +459,9 @@ body, html {
   /* Position the "next button" to the right */ }
   .overlay .overlay-content {
     position: relative;
-    margin: auto;
+    margin: 0 auto;
     padding: 0;
-    width: 90%;
+    width: 95%;
     max-width: 1200px; }
   .overlay .overlay-container {
     display: none;
@@ -454,7 +471,7 @@ body, html {
       width: 100%; }
   .overlay .column {
     float: left;
-    width: 25%;
+    width: 100px;
     padding: 0 8px; }
     .overlay .column .demo {
       width: 100%; }
@@ -499,7 +516,8 @@ body, html {
     position: absolute;
     bottom: 0;
     left: 0;
-    margin-bottom: 20px; }
+    margin-bottom: 20px;
+    width: 3000px; }
 
 .footer {
   width: 100%;

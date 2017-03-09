@@ -453,6 +453,7 @@
 .grid{
     position: relative;
     margin-bottom: -20px;
+    height: auto;
 
     .item {
         display: block;
@@ -461,7 +462,30 @@
         z-index: 1;
         padding: 0 10px;
 
+        /* Next & previous buttons */
+        
     }
+
+    .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            width: 50%;
+            height: 450px;
+            user-select: none;
+            -webkit-user-select: none;
+            text-decoration: none;
+        }
+
+        .prev{
+            left: 0;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+        }
 
     .item.muuri-hidden {
         z-index: 0;
@@ -504,9 +528,9 @@
 
     .overlay-content {
       position: relative;
-      margin: auto;
+      margin: 0 auto;
       padding: 0;
-      width: 90%;
+      width: 95%;
       max-width: 1200px;
     }
 
@@ -521,7 +545,7 @@
 
     .column {
         float: left;
-            width: 25%;
+            width: 100px;
             padding: 0 8px;
 
         .demo{
@@ -593,6 +617,7 @@
         bottom: 0;
         left: 0;
         margin-bottom: 20px;
+        width: 3000px
     }
 }
 
