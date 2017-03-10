@@ -24,16 +24,36 @@
 
         $str = explode('.', $current_file);
 
-        for($i = 0; $i < sizeof($requestUri); $i++){
+        global $connection;
 
-            for($j = 0; $j < sizeof($str); $j++){
+        if(isset($_GET['image_id'])){
 
-                if($str[$j] == $requestUri[$i]){
-                    echo "<div id='prev-page' class='prev-page fa fa-arrow-left'>";
-                    echo "</div>";
+            $image_id = $_GET['image_id'];
+        
+            $get_album  = "SELECT * FROM gallery WHERE image_id = $image_id";
+            $get_album_query = mysqli_query($connection, $get_album);
+            
+            $row = mysqli_fetch_assoc($get_album_query);
+
+            $image_album_id = $row['image_album_id'];
+            
+        }
+
+        for($i = 0; $i < sizeof($str); $i++){ 
+
+                if($str[$i] == 'image_view'){
+                    echo "<a href='album.php?album=$image_album_id' class='prev-page'>";
+                    echo "<div class='fa fa-arrow-left'></div>";
+                    echo "</a>";
+                } else if($str[$i] == 'album'){
+                    echo "<a href='gallery.php' class='prev-page'>";
+                    echo "<div class='fa fa-arrow-left'></div>";
+                    echo "</a>";
+                }else if($str[$i] == 'post'){
+                    echo "<a href='posts.php' class='prev-page'>";
+                    echo "<div class='fa fa-arrow-left'></div>";
+                    echo "</a>";
                 }
-
-            }
 
         }
     }

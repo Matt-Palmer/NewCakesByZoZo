@@ -32,7 +32,7 @@ function createComment(){
 
 ?>
 
-<div id="gallery-page" class="content-container">
+<div id="image-page" class="content-container">
     <div class="page-content">
         <section id="albums" class="light">
             
@@ -55,11 +55,10 @@ function createComment(){
                         echo '<div class="image-container">';
                         echo "<img src='images/$image_one'>";
                         echo '</div>';
-                        echo '<hr class="post-split">';
                         echo '</div>';                             
                         echo '</div>';
 
-                        
+                        echo '<hr class="section-split">';
                         
                     }
                 ?>
@@ -95,28 +94,42 @@ function createComment(){
 
                 ?>
 
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                      <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          Click here to leave a comment
+                        </a>
+                      </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <form id="add-comment-form" action="" method="post" role="form">
+                            <div id="comment-name-input" class="form-group col-sm-12">
+                                <label for="comment_author">Name</label>
+                                <input type="text" name="comment_author" class="form-control" value="<?php if(isset($_POST['comment_author'])){ echo $name; }?>" placeholder="Enter your name...">
+                            </div>
+
+                            <div class="form-group col-sm-12">
+                                <label for="comment_content">Comment</label>
+                                <textarea class="form-control" name="comment_content" rows="10"><?php if(isset($_POST['comment_content'])){ echo $comment; }?></textarea>
+                            </div>
+
+                            <div class="btn-container">
+                                <button id="add-comment" type="submit" name="create_comment" class="button secondary-btn">Submit</button>
+                            </div>
+                        
+                        </form>
+                    </div>
+                  </div>
+                </div>
 
 
-                <form id="add-comment-form" action="" method="post" role="form">
-                        <h4>Leave a Comment:</h4>
-                        <div id="comment-name-input" class="form-group col-sm-12">
-                            <label for="comment_author">Name</label>
-                            <input type="text" name="comment_author" class="form-control" value="<?php if(isset($_POST['comment_author'])){ echo $name; }?>" placeholder="Enter your name...">
-                        </div>
-
-                        <div class="form-group col-sm-12">
-                            <label for="comment_content">Comment</label>
-                            <textarea class="form-control" name="comment_content" rows="10"><?php if(isset($_POST['comment_content'])){ echo $comment; }?></textarea>
-                        </div>
-
-                        <div class="btn-container">
-                            <button id="add-comment" type="submit" name="create_comment" class="button secondary-btn">Submit</button>
-                        </div>
-                    
-                </form>
+                
                 
 
-                <hr>
+                <hr class="section-split">
                 
 
                 <!-- Posted Comments -->

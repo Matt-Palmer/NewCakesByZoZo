@@ -21,25 +21,23 @@
                         $album_title = mysqli_fetch_assoc($get_album_title_query);
                         $title = $album_title['album_title'];
 
-                        $currentSlide = 1;
-
                         echo "<h3>$title</h3>";
 
                         echo '<div class="grid">';
                                 while($row = mysqli_fetch_assoc($get_album_images_query)){
 
                                     $image_one = $row['image_one'];
+                                    $image_id = $row['image_id'];
+                                    $comments = $row['image_comment_count'];
 
                                     echo '<div class="item">';
-                                        echo '<div class="image-container">';
-                                            echo "<img src='images/$image_one' onclick='openModal();currentSlide($currentSlide)'>";
-                                        echo '</div>';
-                                        echo "<p id='comments'><span class='fa fa-comments'> Comments 2</span></p>";
-                                        echo '<hr class="post-split">';
+                                    echo '<div class="image-container">';
+                                    echo "<a href='image_view.php?image_id=$image_id'><img src='images/$image_one'></a>";
+                                    echo '</div>';
+                                    echo "<p id='comments'><span class='fa fa-comments'> Comments $comments</span></p>";
+                                    echo '<hr class="post-split">';
                                     echo '</div>';
 
-
-                                    $currentSlide++;
                                 }
                         echo '</div>';
                     }

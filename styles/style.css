@@ -73,8 +73,9 @@ body, html {
     width: 20px;
     height: 20px;
     left: 10px;
-    top: 40%;
-    text-align: center; }
+    top: 35%;
+    text-align: center;
+    color: #03113d; }
   .nav-container .nav-content-container {
     position: absolute;
     top: 0;
@@ -129,13 +130,15 @@ body, html {
 #posts-page .page-content,
 #post-page .page-content,
 #gallery-page .page-content,
-#about-page .page-content {
+#about-page .page-content,
+#image-page .page-content {
   margin-top: 95px; }
   #home .page-content h3,
   #posts-page .page-content h3,
   #post-page .page-content h3,
   #gallery-page .page-content h3,
-  #about-page .page-content h3 {
+  #about-page .page-content h3,
+  #image-page .page-content h3 {
     margin-bottom: 20px; }
   #home .page-content #posts,
   #home .page-content #albums,
@@ -151,7 +154,10 @@ body, html {
   #gallery-page .page-content #about-me,
   #about-page .page-content #posts,
   #about-page .page-content #albums,
-  #about-page .page-content #about-me {
+  #about-page .page-content #about-me,
+  #image-page .page-content #posts,
+  #image-page .page-content #albums,
+  #image-page .page-content #about-me {
     padding: 0 10px; }
     #home .page-content #posts p,
     #home .page-content #albums p,
@@ -167,14 +173,18 @@ body, html {
     #gallery-page .page-content #about-me p,
     #about-page .page-content #posts p,
     #about-page .page-content #albums p,
-    #about-page .page-content #about-me p {
+    #about-page .page-content #about-me p,
+    #image-page .page-content #posts p,
+    #image-page .page-content #albums p,
+    #image-page .page-content #about-me p {
       text-align: justify; }
 
 #home h3,
 #posts-page h3,
 #post-page h3,
 #gallery-page h3,
-#about-page h3 {
+#about-page h3,
+#image-page h3 {
   text-transform: uppercase;
   display: inline-block;
   text-decoration: underline;
@@ -184,26 +194,30 @@ body, html {
 #posts-page h4,
 #post-page h4,
 #gallery-page h4,
-#about-page h4 {
+#about-page h4,
+#image-page h4 {
   color: #03113d; }
 #home p,
 #posts-page p,
 #post-page p,
 #gallery-page p,
-#about-page p {
+#about-page p,
+#image-page p {
   text-align: justify;
   color: #03113d; }
 #home .page-content,
 #posts-page .page-content,
 #post-page .page-content,
 #gallery-page .page-content,
-#about-page .page-content {
+#about-page .page-content,
+#image-page .page-content {
   text-align: center; }
   #home .page-content .section-split,
   #posts-page .page-content .section-split,
   #post-page .page-content .section-split,
   #gallery-page .page-content .section-split,
-  #about-page .page-content .section-split {
+  #about-page .page-content .section-split,
+  #image-page .page-content .section-split {
     width: 90%;
     border-color: #03113d;
     margin: 20px auto; }
@@ -226,7 +240,11 @@ body, html {
   #about-page .page-content #welcome,
   #about-page .page-content #gallery-preview,
   #about-page .page-content #posts-preview,
-  #about-page .page-content #about-me-preview {
+  #about-page .page-content #about-me-preview,
+  #image-page .page-content #welcome,
+  #image-page .page-content #gallery-preview,
+  #image-page .page-content #posts-preview,
+  #image-page .page-content #about-me-preview {
     padding-left: 10px;
     padding-right: 10px;
     color: #03113d; }
@@ -234,13 +252,15 @@ body, html {
   #posts-page .page-content #welcome .image-container,
   #post-page .page-content #welcome .image-container,
   #gallery-page .page-content #welcome .image-container,
-  #about-page .page-content #welcome .image-container {
+  #about-page .page-content #welcome .image-container,
+  #image-page .page-content #welcome .image-container {
     margin-bottom: 20px; }
     #home .page-content #welcome .image-container img,
     #posts-page .page-content #welcome .image-container img,
     #post-page .page-content #welcome .image-container img,
     #gallery-page .page-content #welcome .image-container img,
-    #about-page .page-content #welcome .image-container img {
+    #about-page .page-content #welcome .image-container img,
+    #image-page .page-content #welcome .image-container img {
       width: 100%; }
   #home .page-content #gallery-preview,
   #home .page-content #albums,
@@ -256,7 +276,10 @@ body, html {
   #gallery-page .page-content #post,
   #about-page .page-content #gallery-preview,
   #about-page .page-content #albums,
-  #about-page .page-content #post {
+  #about-page .page-content #post,
+  #image-page .page-content #gallery-preview,
+  #image-page .page-content #albums,
+  #image-page .page-content #post {
     padding-left: 0px;
     padding-right: 0px; }
     #home .page-content #gallery-preview .image-container img,
@@ -273,7 +296,10 @@ body, html {
     #gallery-page .page-content #post .image-container img,
     #about-page .page-content #gallery-preview .image-container img,
     #about-page .page-content #albums .image-container img,
-    #about-page .page-content #post .image-container img {
+    #about-page .page-content #post .image-container img,
+    #image-page .page-content #gallery-preview .image-container img,
+    #image-page .page-content #albums .image-container img,
+    #image-page .page-content #post .image-container img {
       width: 100%; }
   #home .page-content #about-me-preview .profile-image-container,
   #home .page-content #about-me .profile-image-container,
@@ -284,7 +310,9 @@ body, html {
   #gallery-page .page-content #about-me-preview .profile-image-container,
   #gallery-page .page-content #about-me .profile-image-container,
   #about-page .page-content #about-me-preview .profile-image-container,
-  #about-page .page-content #about-me .profile-image-container {
+  #about-page .page-content #about-me .profile-image-container,
+  #image-page .page-content #about-me-preview .profile-image-container,
+  #image-page .page-content #about-me .profile-image-container {
     margin: 0px auto 20px;
     width: 250px;
     z-index: -1; }
@@ -297,10 +325,33 @@ body, html {
     #gallery-page .page-content #about-me-preview .profile-image-container #profile-img,
     #gallery-page .page-content #about-me .profile-image-container #profile-img,
     #about-page .page-content #about-me-preview .profile-image-container #profile-img,
-    #about-page .page-content #about-me .profile-image-container #profile-img {
+    #about-page .page-content #about-me .profile-image-container #profile-img,
+    #image-page .page-content #about-me-preview .profile-image-container #profile-img,
+    #image-page .page-content #about-me .profile-image-container #profile-img {
       border-radius: 50%;
       width: 100%;
       height: 250px; }
+
+#image-page #post-content,
+#post-page #post-content {
+  margin-top: 20px;
+  margin-bottom: 5px; }
+#image-page .grid,
+#post-page .grid {
+  margin-bottom: 20px; }
+#image-page .card,
+#post-page .card {
+  border: none; }
+  #image-page .card .card-header,
+  #post-page .card .card-header {
+    border: none;
+    background-color: white;
+    padding: 0 10px;
+    text-align: center; }
+    #image-page .card .card-header a,
+    #post-page .card .card-header a {
+      color: #03113d;
+      text-decoration: none; }
 
 /*(4) PAGE CONTENT END*/
 /*(5) BUTTONS START */
@@ -377,7 +428,9 @@ body, html {
   color: white;
   padding: 0 10px 10px 10px;
   text-align: left;
-  margin: 0 10px; }
+  margin: 20px 10px 0; }
+  #add-comment-form #comment-name-input {
+    padding-top: 20px; }
   #add-comment-form .form-group {
     padding-left: 0;
     padding-right: 0;

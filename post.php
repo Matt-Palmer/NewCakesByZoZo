@@ -70,8 +70,10 @@ function createComment(){
 
                     <p class="date-and-time text-small"><span class="fa fa-calendar"></span><?php echo ' ' . $uk_date; ?></p>
 
-                    <hr class="section-split">
+                    
                 </div>
+
+                <hr class="section-split">
 
             <?php
 
@@ -115,26 +117,39 @@ function createComment(){
 
 
 
-            <form id="add-comment-form" action="" method="post" role="form">
-                        <h4>Leave a Comment:</h4>
-                        <div id="comment-name-input" class="form-group col-sm-12">
-                            <label for="comment_author">Name</label>
-                            <input type="text" name="comment_author" class="form-control" value="<?php if(isset($_POST['comment_author'])){ echo $name; }?>" placeholder="Enter your name...">
-                        </div>
+                <div id="accordion" role="tablist" aria-multiselectable="true">
+                  <div class="card">
+                    <div class="card-header" role="tab" id="headingOne">
+                      <h5 class="mb-0">
+                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                          Click here to leave a comment
+                        </a>
+                      </h5>
+                    </div>
 
-                        <div class="form-group col-sm-12">
-                            <label for="comment_content">Comment</label>
-                            <textarea class="form-control" name="comment_content" rows="10"><?php if(isset($_POST['comment_content'])){ echo $comment; }?></textarea>
-                        </div>
+                    <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne">
+                        <form id="add-comment-form" action="" method="post" role="form">
+                            <div id="comment-name-input" class="form-group col-sm-12">
+                                <label for="comment_author">Name</label>
+                                <input type="text" name="comment_author" class="form-control" value="<?php if(isset($_POST['comment_author'])){ echo $name; }?>" placeholder="Enter your name...">
+                            </div>
 
-                        <div class="btn-container">
-                            <button id="add-comment" type="submit" name="create_comment" class="button secondary-btn">Submit</button>
-                        </div>
-                    
-                </form>
+                            <div class="form-group col-sm-12">
+                                <label for="comment_content">Comment</label>
+                                <textarea class="form-control" name="comment_content" rows="10"><?php if(isset($_POST['comment_content'])){ echo $comment; }?></textarea>
+                            </div>
+
+                            <div class="btn-container">
+                                <button id="add-comment" type="submit" name="create_comment" class="button secondary-btn">Submit</button>
+                            </div>
+                        
+                        </form>
+                    </div>
+                  </div>
+                </div>
                 
 
-                <hr>
+                <hr class="section-split">
                 
 
                 <!-- Posted Comments -->
