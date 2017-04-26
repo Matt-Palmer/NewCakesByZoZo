@@ -26,25 +26,25 @@
                         $album_title = $albumRow['album_title'];
                 ?>
 
-                <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
-                
-                    <?php 
+                    <div class="col-xs-12 col-md-6 col-lg-4 col-xl-3">
 
-                        $image_one = $album['image_one'];
-                        $image_date = $album['image_date'];
-                        
-                        echo "<a href='album.php?album=$image_album_id' class='card'>";
-                        echo '<div class="image-container">';
-                        echo "<img src='images/$image_one'>";
-                        echo '</div>';
-                        echo "<span class='album-title secondary-btn'>$album_title</span>";
-                        echo '</a>';
-                    
-                    ?>
+                        <?php 
 
-                </div>
+                            $image_one = $album['image_one'];
+                            $image_date = $album['image_date'];
 
-                <hr class="post-split">
+                            echo "<a href='album.php?album=$image_album_id' class='card'>";
+                            echo '<div class="image-container">';
+                            echo "<img src='images/$image_one'>";
+                            echo '</div>';
+                            echo "<span class='album-title secondary-btn'>$album_title</span>";
+                            echo '</a>';
+
+                        ?>
+
+                    </div>
+
+                    <hr class="post-split">
                     
                 <?php     
 
